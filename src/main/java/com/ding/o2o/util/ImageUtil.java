@@ -28,7 +28,7 @@ public class ImageUtil {
      * @param targetAddr
      * @return
      */
-    public static String generateThumbnail(CommonsMultipartFile thumbnail, String targetAddr) {
+    public static String generateThumbnail(File thumbnail, String targetAddr) {
         String realFileName = FileUtil.getRandomFileName();
         String extension = getFileExtension(thumbnail);
         makeDirPath(targetAddr);
@@ -49,7 +49,7 @@ public class ImageUtil {
      * @param cFile
      * @return
      */
-    private static String getFileExtension(CommonsMultipartFile cFile) {
+    private static String getFileExtension(File cFile) {
         String originalFileName = cFile.getOriginalFilename();
         return originalFileName.substring(originalFileName.lastIndexOf("."));
     }
