@@ -5,6 +5,7 @@ import com.ding.o2o.entity.Area;
 import com.ding.o2o.entity.PersonInfo;
 import com.ding.o2o.entity.Shop;
 import com.ding.o2o.entity.ShopCategory;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -16,6 +17,7 @@ public class ShopDaoTest extends BaseTest{
     @Autowired
     private ShopDao shopDao;
     @Test
+    @Ignore
     public void testInsertShop() {
         Shop shop = new Shop();
         PersonInfo owner = new PersonInfo();
@@ -37,6 +39,18 @@ public class ShopDaoTest extends BaseTest{
         shop.setAdvice("审核中");
 
         int effectedNum = shopDao.insertShop(shop);
+        assertEquals(1, effectedNum);
+    }
+
+    @Test
+    public void testUpdateShop() {
+        Shop shop = new Shop();
+        shop.setShopId(29L);
+        shop.setShopDesc("测试描述");
+        shop.setShopAddr("测试地址");
+        shop.setLastEditTime(new Date());
+
+        int effectedNum = shopDao.updateShop(shop);
         assertEquals(1, effectedNum);
     }
 
