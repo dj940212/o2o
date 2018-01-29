@@ -17,7 +17,7 @@ public class ImageUtil {
     public static void main(String[] args) throws IOException{
         Thumbnails.of(new File("/Users/ding/Desktop/car.jpg"))
                 .size(200, 200).watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File("/Users/ding/projects/o2o/src/main/resources/star.png")), 0.25f)
-                .outputQuality(0.8f).toFile("/Users/ding/Desktop/car_new.jpg");
+                .outputQuality(0.8f).toFile("/Users/ding/Desktop/car_new123.jpg");
     }
 
     /**
